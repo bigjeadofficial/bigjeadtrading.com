@@ -1321,15 +1321,15 @@
 
     .legal-track{
       display:flex;
-      width:300%;
+      width:400%;
       height:100%;
       min-height:0;
       transition:transform .38s cubic-bezier(.2,.72,.2,1);
     }
 
     .legal-page{
-      width:33.333333%;
-      flex:0 0 33.333333%;
+      width:25%;
+      flex:0 0 25%;
       overflow-y:auto;
       padding:38px 34px 64px;
       overscroll-behavior:contain;
@@ -1365,6 +1365,12 @@
     .legal-page ul{
       padding-left:20px;
       margin:10px 0 0;
+    }
+
+    .legal-page a{
+      color:#e7e7e3;
+      text-decoration:underline;
+      text-underline-offset:3px;
     }
 
     .legal-tabs{
@@ -1784,6 +1790,69 @@
     }
     .faq-item.open .faq-a{grid-template-rows:1fr}
     .faq-item.open .faq-q span:last-child{transform:rotate(45deg)}
+
+    .cancel-section{
+      position:relative;
+      padding:88px 0;
+    }
+    .cancel-card{
+      display:grid;
+      grid-template-columns:minmax(0,1fr) auto;
+      gap:48px;
+      align-items:center;
+      padding:40px 42px;
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:22px;
+      background:rgba(255,255,255,.025);
+    }
+    .cancel-card .label{
+      color:#7f7f7b;
+      font-size:.75rem;
+      text-transform:uppercase;
+      letter-spacing:.14em;
+      margin-bottom:14px;
+    }
+    .cancel-card h2{
+      margin:0 0 14px;
+      font-size:clamp(2.4rem,4.8vw,5rem);
+      line-height:.94;
+      letter-spacing:-.055em;
+      font-weight:600;
+    }
+    .cancel-card p{
+      max-width:720px;
+      margin:0;
+      color:#8e8e8a;
+      line-height:1.7;
+      font-size:.95rem;
+    }
+    .cancel-actions{
+      min-width:min(320px,100%);
+      display:flex;
+      flex-direction:column;
+      align-items:stretch;
+      gap:11px;
+    }
+    .cancel-actions .button{
+      text-align:center;
+      justify-content:center;
+      white-space:nowrap;
+    }
+    .cancel-actions small{
+      color:#666662;
+      line-height:1.5;
+      text-align:center;
+    }
+    @media (max-width:760px){
+      .cancel-section{padding:68px 0}
+      .cancel-card{
+        grid-template-columns:1fr;
+        gap:28px;
+        padding:30px 24px;
+      }
+      .cancel-actions{min-width:0}
+      .cancel-actions .button{white-space:normal}
+    }
 
     .final-cta{
       position:relative;
@@ -4587,7 +4656,21 @@ a.button.button-twitch:hover {
 <h2>Questions.<br/><span class="accent-orange">Answered simply.</span></h2>
 </div>
 </div>
-<div class="faq"><div class="faq-item reveal zoom-soft"><button class="faq-q"><span>What do I get inside the free Discord?</span><span>+</span></button><div class="faq-a"><div><p>The free side of the Discord is the perfect community space. Talk with other members on everything trading, squad building, EVOs and pretty much everything else FC27.</p></div></div></div><div class="faq-item reveal zoom-soft"><button class="faq-q"><span>What is included with Premium?</span><span>+</span></button><div class="faq-a"><div><p>Signing up for Premium unlocks everything in the server. You’ll get trading calls, investments, flips, guides, 1-on-1 support from trading experts. It’s silly how many coins you can make!</p></div></div></div><div class="faq-item reveal zoom-soft"><button class="faq-q"><span>How does the Twitch subscriber perk work?</span><span>+</span></button><div class="faq-a"><div><p>If you are a Twitch sub or have Twitch Prime, you can use that sub to access 7 days of free Premium. This will link automatically and you can find out how to do this in the server.</p></div></div></div><div class="faq-item reveal zoom-soft"><button class="faq-q"><span>Can I get a refund if I change my mind?</span><span>+</span></button><div class="faq-a"><div><p>Unfortunately, due to how these servers work, we can’t offer refunds. People could stay in for a month, take all the trades and guides, and then ask for their money back. For this reason, we have to operate on no refunds.</p></div></div></div><div class="faq-item reveal zoom-soft"><button class="faq-q"><span>How many coins do I need to start trading?</span><span>+</span></button><div class="faq-a"><div><p>Essentially 0. Our server covers all budgets and skill levels.</p></div></div></div><div class="faq-item reveal zoom-soft"><button class="faq-q"><span>How much time does trading take each day?</span><span>+</span></button><div class="faq-a"><div><p>It depends how many coins you want to make. You do not have to be online much to make a lot of coins, but it can certainly help.</p></div></div></div><div class="faq-item reveal zoom-soft"><button class="faq-q"><span>Will the trades work on PlayStation, Xbox and PC?</span><span>+</span></button><div class="faq-a"><div><p>Yes! We have dedicated trading experts for each platform.</p></div></div></div><div class="faq-item reveal zoom-soft"><button class="faq-q"><span>How do I get access after I pay?</span><span>+</span></button><div class="faq-a"><div><p>When you pay for Premium, you will automatically be given a Discord role which gives you access to all Premium channels.</p></div></div></div><div class="faq-item reveal zoom-soft"><button class="faq-q"><span>I paid for Premium and haven’t got access?</span><span>+</span></button><div class="faq-a"><div><p>If anything goes wrong, we have a ticket system where you can raise this with one of the team!</p></div></div></div></div>
+<div class="faq"><div class="faq-item reveal zoom-soft"><button class="faq-q"><span>What do I get inside the free Discord?</span><span>+</span></button><div class="faq-a"><div><p>The free side of the Discord is the perfect community space. Talk with other members on everything trading, squad building, EVOs and pretty much everything else FC27.</p></div></div></div><div class="faq-item reveal zoom-soft"><button class="faq-q"><span>What is included with Premium?</span><span>+</span></button><div class="faq-a"><div><p>Signing up for Premium unlocks everything in the server. You’ll get trading calls, investments, flips, guides, 1-on-1 support from trading experts. It’s silly how many coins you can make!</p></div></div></div><div class="faq-item reveal zoom-soft"><button class="faq-q"><span>How does the Twitch subscriber perk work?</span><span>+</span></button><div class="faq-a"><div><p>If you are a Twitch sub or have Twitch Prime, you can use that sub to access 7 days of free Premium. This will link automatically and you can find out how to do this in the server.</p></div></div></div><div class="faq-item reveal zoom-soft"><button class="faq-q"><span>Can I get a refund if I change my mind?</span><span>+</span></button><div class="faq-a"><div><p>Premium access is generally non-refundable once it has been supplied or used, except where a refund or cancellation right is required by law. Recurring plans can be cancelled at any time to stop future renewals. See the Refund / Cancellation Policy below for the full details.</p></div></div></div><div class="faq-item reveal zoom-soft"><button class="faq-q"><span>How many coins do I need to start trading?</span><span>+</span></button><div class="faq-a"><div><p>Essentially 0. Our server covers all budgets and skill levels.</p></div></div></div><div class="faq-item reveal zoom-soft"><button class="faq-q"><span>How much time does trading take each day?</span><span>+</span></button><div class="faq-a"><div><p>It depends how many coins you want to make. You do not have to be online much to make a lot of coins, but it can certainly help.</p></div></div></div><div class="faq-item reveal zoom-soft"><button class="faq-q"><span>Will the trades work on PlayStation, Xbox and PC?</span><span>+</span></button><div class="faq-a"><div><p>Yes! We have dedicated trading experts for each platform.</p></div></div></div><div class="faq-item reveal zoom-soft"><button class="faq-q"><span>How do I get access after I pay?</span><span>+</span></button><div class="faq-a"><div><p>When you pay for Premium, you will automatically be given a Discord role which gives you access to all Premium channels.</p></div></div></div><div class="faq-item reveal zoom-soft"><button class="faq-q"><span>I paid for Premium and haven’t got access?</span><span>+</span></button><div class="faq-a"><div><p>If anything goes wrong, we have a ticket system where you can raise this with one of the team!</p></div></div></div></div>
+</div>
+</section><section class="cancel-section section-rule" id="cancel-membership">
+<div class="container">
+<div class="cancel-card reveal zoom-soft">
+<div>
+<div class="label">Manage your membership</div>
+<h2>Change your mind? <span class="accent-orange">Cancel Anytime.</span></h2>
+<p>Recurring Premium members can stop future renewals at any time through the SellAuth subscription portal. Sign in with the email used at checkout, open your active subscription and choose cancel.</p>
+</div>
+<div class="cancel-actions">
+<a class="button button-light" href="https://big-jead-trading.mysellauth.com/?login=1&amp;back=subscriptions" rel="noopener" target="_blank">Manage / Cancel Subscription</a>
+<small>Stops future renewals.</small>
+</div>
+</div>
 </div>
 </section><section class="final-cta section-rule" id="finalCta">
 <div aria-hidden="true" class="final-cta-bg"></div>
@@ -4624,8 +4707,8 @@ a.button.button-twitch:hover {
 <h4>Legal</h4>
 <div class="legal-action-bar"><button class="legal-link" data-legal-page="terms" type="button">Terms &amp; Conditions</button>
 <button class="legal-link" data-legal-page="privacy" type="button">Privacy Policy</button>
-<button class="legal-link" data-legal-page="cookies" type="button">Cookie Policy</button></div>
-<button data-policy="refunds">Refund / Cancellation</button>
+<button class="legal-link" data-legal-page="cookies" type="button">Cookie Policy</button>
+<button class="legal-link" data-legal-page="refunds" type="button">Refund / Cancellation</button></div>
 </div>
 </div>
 <div class="footer-bottom">
@@ -4634,15 +4717,6 @@ a.button.button-twitch:hover {
 </div>
 </div>
 </footer>
-<div class="modal-backdrop" id="policyModal">
-<div class="modal">
-<div class="modal-head">
-<h3 id="policyTitle">Policy</h3>
-<button class="modal-close" id="modalClose">×</button>
-</div>
-<div class="modal-body" id="policyBody"></div>
-</div>
-</div>
 <script>
     // Replace before launch:
     // https://discord.gg/BXUzQ83Qk7
@@ -4859,78 +4933,6 @@ a.button.button-twitch:hover {
     window.addEventListener('scroll', requestLinkedMotion, {passive:true});
     window.addEventListener('resize', requestLinkedMotion);
     requestLinkedMotion();
-
-    const policies = {
-      terms: {
-        title: 'Terms & Conditions',
-        body: `
-          <p><strong>Draft placeholder — review before launch.</strong></p>
-          <h4>Service</h4>
-          <p>The Big Jead Trading Lounge provides community access, discussion and educational content. No outcome or return is guaranteed and nothing provided is personalised financial advice.</p>
-          <h4>Membership</h4>
-          <p>Premium access is personal to the purchaser and may not be resold, shared or transferred.</p>
-          <h4>Conduct</h4>
-          <p>Access may be removed for fraud, abuse, harassment or serious breaches of community rules.</p>
-          <h4>Contact</h4>
-          <p>contactbigjead@gmail.com</p>`
-      },
-      privacy: {
-        title: 'Privacy Policy',
-        body: `
-          <p><strong>Draft placeholder — review before launch.</strong></p>
-          <h4>Information</h4>
-          <p>Data may include email address, Discord ID, Twitch connection status, payment status and support messages.</p>
-          <h4>Use</h4>
-          <p>Information may be used to manage access, verify subscriptions, deliver support, prevent abuse and comply with legal obligations.</p>
-          <h4>Third parties</h4>
-          <p>Discord, Twitch and your payment provider may process data under their own terms.</p>`
-      },
-      cookies: {
-        title: 'Cookie Policy',
-        body: `
-          <p><strong>Draft placeholder — review before launch.</strong></p>
-          <p>This standalone page does not itself set analytics or advertising cookies. If you later add analytics, embeds, payments or other third-party tools, update this policy and add consent controls where required.</p>`
-      },
-      refunds: {
-        title: 'Refund / Cancellation Policy',
-        body: `
-          <p><strong>Draft placeholder — confirm your final commercial terms before launch.</strong></p>
-          <h4>Cancellation</h4>
-          <p>If recurring billing is used, members should be able to cancel future renewals through the billing portal or support process.</p>
-          <h4>Refunds</h4>
-          <p>State clearly whether digital membership purchases are refundable, including what happens after premium content has already been accessed. Ensure the final policy complies with applicable consumer law.</p>
-          <h4>Support</h4>
-          <p>contactbigjead@gmail.com</p>`
-      }
-    };
-
-    const modal = document.getElementById('policyModal');
-    const modalClose = document.getElementById('modalClose');
-    const policyTitle = document.getElementById('policyTitle');
-    const policyBody = document.getElementById('policyBody');
-
-    document.querySelectorAll('[data-policy]').forEach(button => {
-      button.addEventListener('click', () => {
-        const policy = policies[button.dataset.policy];
-        policyTitle.textContent = policy.title;
-        policyBody.innerHTML = policy.body;
-        modal.classList.add('open');
-        document.body.style.overflow = 'hidden';
-      });
-    });
-
-    function closeModal(){
-      modal.classList.remove('open');
-      document.body.style.overflow = '';
-    }
-
-    modalClose.addEventListener('click', closeModal);
-    modal.addEventListener('click', e => {
-      if(e.target === modal) closeModal();
-    });
-    document.addEventListener('keydown', e => {
-      if(e.key === 'Escape') closeModal();
-    });
 
 
 
@@ -5168,24 +5170,22 @@ const socialDock = document.getElementById('socialDock');
       requestAnimationFrame(animate);
     }
 
-    const legalDrawer = document.getElementById('legalDrawer');
-    const legalTrack = document.getElementById('legalTrack');
-    const legalTabs = [...document.querySelectorAll('[data-legal-tab]')];
-    const legalOpeners = [...document.querySelectorAll('[data-legal-page]')];
-
     const legalIndex = {
       terms: 0,
       privacy: 1,
-      cookies: 2
+      cookies: 2,
+      refunds: 3
     };
 
     function showLegalPage(page){
+      const legalDrawer = document.getElementById('legalDrawer');
+      const legalTrack = document.getElementById('legalTrack');
       if(!legalDrawer || !legalTrack) return;
+
       const index = legalIndex[page] ?? 0;
+      legalTrack.style.transform = `translateX(-${index * 25}%)`;
 
-      legalTrack.style.transform = `translateX(-${index * 33.333333}%)`;
-
-      legalTabs.forEach(tab => {
+      document.querySelectorAll('[data-legal-tab]').forEach(tab => {
         tab.classList.toggle('is-active', tab.dataset.legalTab === page);
       });
 
@@ -5195,25 +5195,39 @@ const socialDock = document.getElementById('socialDock');
     }
 
     function closeLegal(){
+      const legalDrawer = document.getElementById('legalDrawer');
       if(!legalDrawer) return;
+
       legalDrawer.classList.remove('is-open');
       legalDrawer.setAttribute('aria-hidden','true');
       document.documentElement.style.overflow = '';
     }
 
-    legalOpeners.forEach(button => {
-      button.addEventListener('click', () => showLegalPage(button.dataset.legalPage));
-    });
+    // Delegated handling means the footer links, tabs, backdrop and close
+    // button all work even though the legal drawer appears later in the HTML.
+    document.addEventListener('click', event => {
+      const opener = event.target.closest('[data-legal-page]');
+      if(opener){
+        event.preventDefault();
+        showLegalPage(opener.dataset.legalPage);
+        return;
+      }
 
-    legalTabs.forEach(button => {
-      button.addEventListener('click', () => showLegalPage(button.dataset.legalTab));
-    });
+      const tab = event.target.closest('[data-legal-tab]');
+      if(tab){
+        event.preventDefault();
+        showLegalPage(tab.dataset.legalTab);
+        return;
+      }
 
-    document.querySelectorAll('[data-legal-close]').forEach(button => {
-      button.addEventListener('click', closeLegal);
+      if(event.target.closest('[data-legal-close]')){
+        event.preventDefault();
+        closeLegal();
+      }
     });
 
     document.addEventListener('keydown', event => {
+      const legalDrawer = document.getElementById('legalDrawer');
       if(event.key === 'Escape' && legalDrawer?.classList.contains('is-open')){
         closeLegal();
       }
@@ -5288,139 +5302,99 @@ const socialDock = document.getElementById('socialDock');
 <button aria-label="Close legal information" class="legal-close" data-legal-close="" type="button">×</button>
 </div>
 <div aria-label="Legal pages" class="legal-tabs">
-<button class="legal-tab is-active" data-legal-tab="terms" type="button">Terms of Service</button>
+<button class="legal-tab is-active" data-legal-tab="terms" type="button">Terms &amp; Conditions</button>
 <button class="legal-tab" data-legal-tab="privacy" type="button">Privacy Policy</button>
 <button class="legal-tab" data-legal-tab="cookies" type="button">Cookie Policy</button>
+<button class="legal-tab" data-legal-tab="refunds" type="button">Refund / Cancellation</button>
 </div>
 <div class="legal-track" id="legalTrack">
 <section class="legal-page" data-page="terms">
-<h2>Terms of Service</h2>
-<div class="legal-updated">Draft version — August 2026</div>
-<p>
-            These Terms govern access to The Big Jead Trading Lounge, including the free Discord community,
-            premium subscriber channels and any related website services.
-          </p>
-<h3>1. The service</h3>
-<p>
-            The Lounge provides community discussion, trading ideas, market observations and methods relating
-            to football-game economies, including approaches intended to help members build in-game coins and points.
-            Content is informational and community-based. Results are never guaranteed.
-          </p>
-<h3>2. Premium access</h3>
-<p>
-            Paid plans unlock subscriber-only Discord areas for the purchased access period. Access is personal
-            to the purchaser and may not be resold, shared or transferred unless we expressly agree otherwise.
-          </p>
-<h3>3. Payments and access periods</h3>
-<p>
-            Payments are processed through SellAuth and the payment methods made available there. Your selected
-            plan determines the duration of premium access. Any renewal terms shown at checkout take priority over
-            general wording on this site.
-          </p>
-<h3>4. No guaranteed profit or in-game outcome</h3>
-<p>
-            Market conditions change. Trade ideas, farming methods and community discussion may not produce the same
-            result for every member. You remain responsible for your own in-game decisions, purchases and account activity.
-          </p>
-<h3>5. Game publisher rules</h3>
-<p>
-            Members are responsible for complying with the rules, terms and policies of the relevant game publisher
-            and platform. The Lounge is an independent community and is not endorsed by or affiliated with EA or any
-            game-platform operator unless explicitly stated.
-          </p>
-<h3>6. Community conduct</h3>
-<p>
-            We may remove access where a member engages in harassment, abuse, fraud, account sharing, deliberate disruption
-            or conduct that puts the community or service at risk.
-          </p>
-<h3>7. Refunds and cancellations</h3>
-<p>
-            Refund and cancellation rights depend on the nature of the digital service, when access is supplied and any
-            mandatory consumer rights that apply to you. Any specific refund terms shown during checkout form part of your purchase.
-          </p>
-<h3>8. Availability</h3>
-<p>
-            We aim to keep the Lounge available, but Discord, payment processors, game servers and other third-party services
-            may experience outages or changes outside our control.
-          </p>
-<h3>9. Contact</h3>
-<p>
-            Questions about these Terms can be sent to contactbigjead@gmail.com.
-          </p>
+<h2>Terms &amp; Conditions</h2>
+<div class="legal-updated">Last updated — 22 September 2026</div>
+<p>These Terms apply when you use the Big Jead Trading website, join The Big Jead Trading Lounge, or purchase Premium access. By using the service or placing an order, you agree to these Terms together with any plan information shown at checkout.</p>
+<h3>1. About the service</h3>
+<p>The Big Jead Trading Lounge is an independent FC trading community providing educational content, market observations, trading ideas, community discussion and support relating to in-game football markets. It is not affiliated with, endorsed by or operated by Electronic Arts, Discord, Twitch, SellAuth, Stripe, PayPal or any console platform.</p>
+<h3>2. No guaranteed results</h3>
+<p>In-game markets can change quickly. Nothing on the website or in the Discord guarantees coins, profit, a particular return, card price movement or any other result. You remain responsible for your own in-game decisions, purchases, account activity and compliance with the rules of the relevant game and platform.</p>
+<h3>3. Premium plans and access</h3>
+<p>Your selected plan, price, billing frequency and access period are shown before you pay. Premium access is for the purchasing member only and must not be resold, shared, copied for redistribution or transferred without our permission. Access normally begins after successful payment and account/Discord verification.</p>
+<h3>4. Recurring subscriptions and cancellation</h3>
+<p>If you choose a recurring plan, it renews at the interval shown at checkout until you cancel it. You can stop future renewals at any time through the <a href="https://big-jead-trading.mysellauth.com/?login=1&amp;back=subscriptions" rel="noopener" target="_blank">SellAuth subscription portal</a>. Unless the billing portal states otherwise, cancellation stops future renewal charges and your existing paid access continues until the end of the current billing period.</p>
+<h3>5. Consumer cancellation rights</h3>
+<p>Nothing in these Terms removes rights you have under applicable consumer law. If you are a UK consumer buying online, statutory cancellation rights may apply. Where you ask for a service to begin during a statutory cancellation period, the law may allow a proportionate deduction for the service supplied before you cancel. Where a purchase includes digital content supplied immediately, different rules may apply where you expressly consent to immediate supply and acknowledge the effect on your cancellation right.</p>
+<h3>6. Refunds</h3>
+<p>Because Premium provides immediate access to member-only information, community channels and support, we do not offer discretionary refunds merely because you change your mind after access has been supplied or used. This does not limit any refund, cancellation or other remedy you are entitled to by law, including where a service is not provided as described.</p>
+<h3>7. Community conduct</h3>
+<p>You must not use the service for fraud, harassment, abuse, impersonation, unauthorised account sharing, leaking or redistributing Premium material, deliberate disruption, unlawful activity or activity that materially risks the community or its members. We may suspend or remove access where reasonably necessary to protect the service, investigate abuse or enforce these Terms.</p>
+<h3>8. Intellectual property</h3>
+<p>Unless stated otherwise, website content, Premium guides, written materials, graphics and original community resources belong to the service operator or are used with permission. Purchasing access gives you a personal right to view and use the material; it does not transfer ownership or give permission to republish, resell or distribute it.</p>
+<h3>9. Availability and third parties</h3>
+<p>The service depends on third-party platforms including Discord, SellAuth, payment providers and game services. Outages, platform changes, maintenance or account restrictions outside our reasonable control may temporarily affect access. We may make reasonable changes to the service, channels or features over time.</p>
+<h3>10. Liability</h3>
+<p>Nothing in these Terms excludes liability that cannot legally be excluded. Subject to that, we are not responsible for losses caused by game-market movements, decisions you make using community information, third-party platform outages or breaches of third-party game/platform rules. These Terms do not affect your statutory consumer rights.</p>
+<h3>11. Contact</h3>
+<p>Questions about these Terms can be sent to <a href="mailto:contactbigjead@gmail.com">contactbigjead@gmail.com</a>.</p>
 </section>
 <section class="legal-page" data-page="privacy">
 <h2>Privacy Policy</h2>
-<div class="legal-updated">Draft version — August 2026</div>
-<p>
-            This Privacy Policy explains how The Big Jead Trading Lounge may handle personal information when you use the
-            website, join the community or purchase premium access.
-          </p>
-<h3>1. Information we may receive</h3>
+<div class="legal-updated">Last updated — 22 September 2026</div>
+<p>This Privacy Policy explains how personal information is handled when you use the Big Jead Trading website, join the community, contact support or purchase Premium access. The operator of The Big Jead Trading Lounge is the controller of personal information it receives and controls directly.</p>
+<h3>1. Information we may process</h3>
 <ul>
-<li>Contact information you provide, such as your email address.</li>
-<li>Discord-related identifiers required to provide or manage community access.</li>
-<li>Purchase and transaction references supplied by SellAuth or a payment provider.</li>
-<li>Messages you send to us for support or account queries.</li>
-<li>Technical information where necessary for security, fraud prevention or site operation.</li>
+<li>Contact details such as your email address and information you provide in messages or support tickets.</li>
+<li>Discord identifiers, usernames and role/access information needed to provide community access.</li>
+<li>Subscription, order and transaction references supplied by SellAuth or the payment provider. We do not need to store your full card details on this website.</li>
+<li>Twitch-related information where you choose to connect or verify a Twitch subscription perk.</li>
+<li>Basic technical, security and browser information needed to operate, protect and troubleshoot the site.</li>
 </ul>
-<h3>2. How we use information</h3>
-<p>
-            We use information to provide Discord access, manage subscriptions, answer support requests, prevent abuse,
-            maintain the service and meet legal or accounting obligations.
-          </p>
-<h3>3. Payments</h3>
-<p>
-            Payments are handled by SellAuth and the payment providers offered through its checkout. We do not need to store
-            your full payment-card details on this website.
-          </p>
-<h3>4. Third-party services</h3>
-<p>
-            The service may interact with Discord, SellAuth, Twitch, YouTube and other platforms you choose to use. Those
-            services operate under their own privacy terms.
-          </p>
-<h3>5. Retention</h3>
-<p>
-            We keep personal information only for as long as reasonably needed for access management, support, security,
-            accounting and legal obligations.
-          </p>
-<h3>6. Your choices and rights</h3>
-<p>
-            Depending on where you live, you may have rights relating to access, correction, deletion, restriction or objection
-            to the use of your personal information. Contact us if you want to make a privacy request.
-          </p>
-<h3>7. Contact</h3>
-<p>
-            Privacy questions can be sent to contactbigjead@gmail.com.
-          </p>
+<h3>2. Why we use your information and our lawful bases</h3>
+<p>We use information to provide and administer your membership, process or verify purchases, give Discord access and provide support where this is necessary to perform our contract with you or take steps at your request before entering a contract. We may also process information to keep the service secure, prevent fraud and abuse, and improve support based on our legitimate interests where those interests are not overridden by your rights. We may keep or disclose information where necessary to comply with legal, tax or accounting obligations.</p>
+<h3>3. Where information comes from</h3>
+<p>Most information comes directly from you. We may also receive limited account, order or status information from services you use with us, such as SellAuth, Discord, Twitch and the payment provider used for your purchase.</p>
+<h3>4. Who we share information with</h3>
+<p>We only share information where needed to operate the service, complete a transaction, provide access, obtain professional services, prevent fraud or comply with law. Relevant providers may include SellAuth, Discord, Twitch and payment providers such as Stripe or PayPal where used. Each third party may process information under its own privacy policy.</p>
+<h3>5. International transfers</h3>
+<p>Some service providers may process information outside the United Kingdom. Where UK data-protection law requires safeguards for an international transfer, we rely on the transfer mechanism used by the relevant provider or another lawful safeguard.</p>
+<h3>6. How long we keep information</h3>
+<p>We keep personal information only for as long as reasonably necessary for the purpose it was collected, including membership administration, support, fraud prevention, dispute handling and legal, tax or accounting requirements. Retention periods therefore vary by record type. Information that is no longer required is deleted, anonymised or allowed to expire where reasonably practicable.</p>
+<h3>7. Your rights</h3>
+<p>Depending on the circumstances, UK data-protection law may give you rights to access your personal information, correct inaccurate information, request deletion or restriction, object to certain processing and receive certain information in a portable format. Where processing is based on consent, you can withdraw that consent at any time without affecting earlier lawful processing.</p>
+<h3>8. Complaints</h3>
+<p>If you have a privacy concern, contact us first at <a href="mailto:contactbigjead@gmail.com">contactbigjead@gmail.com</a>. You also have the right to complain to the UK Information Commissioner's Office (ICO) at <a href="https://ico.org.uk/" rel="noopener" target="_blank">ico.org.uk</a>.</p>
+<h3>9. Changes to this policy</h3>
+<p>We may update this policy when the website, providers or legal requirements change. The latest version will be published here with a revised update date.</p>
 </section>
 <section class="legal-page" data-page="cookies">
 <h2>Cookie Policy</h2>
-<div class="legal-updated">Draft version — August 2026</div>
-<p>
-            This site uses limited browser storage. Strictly necessary storage may be used to remember essential preferences,
-            such as whether you have already responded to the cookie notice. Your choice is stored in a first-party cookie so the popup does not appear again on every visit.
-          </p>
-<h3>Essential storage</h3>
-<p>
-            Essential storage is used only where needed for the website to work correctly or to remember a choice you made.
-            It is not used for advertising.
-          </p>
-<h3>Optional cookies</h3>
-<p>
-            If analytics, advertising or other non-essential tracking is added later, it should remain disabled until you
-            choose to allow it through the cookie consent controls.
-          </p>
-<h3>Embedded services</h3>
-<p>
-            Embedded content such as YouTube videos can involve requests to third-party services. Those providers may process
-            technical information according to their own policies. Where consent is legally required for a non-essential
-            technology, the site should not activate it until consent has been given.
-          </p>
-<h3>Changing your choice</h3>
-<p>
-            You can delete this site's cookies in your browser settings to reset your cookie choice. A dedicated preferences control can also
-            be added later if additional cookie categories are introduced.
-          </p>
+<div class="legal-updated">Last updated — 22 September 2026</div>
+<p>This Cookie Policy explains the browser storage used by the Big Jead Trading website and how third-party services may use cookies or similar technologies.</p>
+<h3>1. Essential preference cookie</h3>
+<p>The site uses a first-party cookie named <strong>bigjead_cookie_consent</strong> to remember whether you accepted or declined the cookie notice. It is used so the notice does not reappear on every visit and is set for up to one year. This cookie is used for site functionality rather than advertising.</p>
+<h3>2. Analytics and advertising</h3>
+<p>The website does not currently use its own analytics or advertising cookies. If that changes, this policy and the consent controls should be updated before non-essential tracking is used where consent is required.</p>
+<h3>3. Third-party services</h3>
+<p>The site uses or links to third-party services including SellAuth and YouTube. When you open a checkout, play embedded media or otherwise interact with those services, they may use cookies, local storage or similar technologies according to their own policies. Payment providers may also use necessary security and fraud-prevention technologies during checkout.</p>
+<h3>4. Managing cookies</h3>
+<p>You can use the site's cookie notice to record your preference for the site's own optional use, and you can delete or block cookies through your browser settings. Blocking essential cookies may cause some site features or third-party services to work incorrectly.</p>
+<h3>5. Contact</h3>
+<p>Questions about this Cookie Policy can be sent to <a href="mailto:contactbigjead@gmail.com">contactbigjead@gmail.com</a>.</p>
+</section>
+<section class="legal-page" data-page="refunds">
+<h2>Refund / Cancellation</h2>
+<div class="legal-updated">Last updated — 22 September 2026</div>
+<p>This policy explains how recurring cancellations and refund requests are handled for Premium access. It does not limit any statutory consumer rights you may have.</p>
+<h3>1. Cancel future renewals anytime</h3>
+<p>You can cancel a recurring Premium subscription at any time through the <a href="https://big-jead-trading.mysellauth.com/?login=1&amp;back=subscriptions" rel="noopener" target="_blank">SellAuth subscription portal</a>. Sign in with the email used at checkout, open your active subscription and choose the cancellation option. Cancellation is intended to stop future renewal charges.</p>
+<h3>2. What happens after you cancel</h3>
+<p>Unless the subscription portal or checkout terms state otherwise, cancelling a recurring subscription does not normally remove the access period you have already paid for. Premium access continues until the end of that paid billing period and then expires.</p>
+<h3>3. Change-of-mind refunds</h3>
+<p>Premium gives immediate access to member-only channels, trading information, guides and support. For that reason, we do not normally provide discretionary refunds simply because a member changes their mind after Premium access has been supplied or used.</p>
+<h3>4. UK statutory cancellation rights</h3>
+<p>If you are a UK consumer buying online, you may have a statutory 14-day cancellation right depending on the type of service/content and how supply begins. If you expressly ask for a service to begin during that period and later cancel within it, the law may allow us to deduct an amount proportionate to the service already supplied. For digital content supplied immediately, your cancellation right may be affected where you expressly consent to immediate supply and acknowledge that effect, as applicable.</p>
+<h3>5. Problems with access or the service</h3>
+<p>If you have been charged but Premium access has not been provided, you have been charged incorrectly, or the service is materially not as described, contact us so we can investigate and put it right. Nothing in this policy excludes remedies you are entitled to under consumer law.</p>
+<h3>6. How to contact us</h3>
+<p>Email <a href="mailto:contactbigjead@gmail.com">contactbigjead@gmail.com</a> with the email used for your order and your order/transaction reference where available. Do not send full card details or account passwords.</p>
 </section>
 </div>
 </aside>
